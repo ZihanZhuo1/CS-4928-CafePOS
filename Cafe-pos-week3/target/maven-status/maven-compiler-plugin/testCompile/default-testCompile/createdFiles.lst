@@ -1,0 +1,3 @@
+com\cafepos\domain\OrderTotalsTests.class
+com\cafepos\domain\MoneyTests.class
+com\cafepos\domain\PaymentStrategyTest.class
