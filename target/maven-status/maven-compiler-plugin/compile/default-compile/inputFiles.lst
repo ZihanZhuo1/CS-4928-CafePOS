@@ -26,4 +26,8 @@ D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\payment\CardPayme
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\payment\CashPayment.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\payment\PaymentStrategy.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\payment\WalletPayment.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\DiscountPolicy.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\FixedCouponDiscount.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\LoyaltyPercentDiscount.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\NoDiscount.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\smells\OrderManagerGod.java
