@@ -28,6 +28,8 @@ D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\payment\PaymentSt
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\payment\WalletPayment.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\DiscountPolicy.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\FixedCouponDiscount.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\FixedRateTaxPolicy.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\LoyaltyPercentDiscount.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\NoDiscount.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\pricing\TaxPolicy.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\smells\OrderManagerGod.java

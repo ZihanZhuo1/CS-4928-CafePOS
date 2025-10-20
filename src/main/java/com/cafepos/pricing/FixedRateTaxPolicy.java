@@ -3,20 +3,20 @@ package com.cafepos.pricing;
 import com.cafepos.common.Money;
 import java.math.BigDecimal;
 
-public final class LoyaltyPercentDiscount implements DiscountPolicy {
+public final class FixedRateTaxPolicy implements TaxPolicy {
     private final int percent;
 
-    public LoyaltyPercentDiscount(int percent) {
+    public FixedRateTaxPolicy(int percent) {
         if (percent < 0)
             throw new IllegalArgumentException("Percent cannot be negative");
         this.percent = percent;
     }
 
     @Override
-    public Money discountOf(Money subtotal) {
-        var d = subtotal.asBigDecimal()
+    public Money taxOn(Money amount) {
+        var t = amount.asBigDecimal()
                 .multiply(BigDecimal.valueOf(percent))
                 .divide(BigDecimal.valueOf(100));
-        return Money.of(d);
+        return Money.of(t);
     }
 }
