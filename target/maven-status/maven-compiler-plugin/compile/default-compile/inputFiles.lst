@@ -1,5 +1,6 @@
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\catalog\Catalog.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\catalog\InMemoryCatalog.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\checkout\CheckoutService.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\checkout\ReceiptPrinter.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\common\Money.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\main\java\com\cafepos\decorator\ExtraShot.java
