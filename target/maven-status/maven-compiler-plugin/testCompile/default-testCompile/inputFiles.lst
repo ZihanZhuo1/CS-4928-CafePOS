@@ -1,7 +1,10 @@
 D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\decorator\DecoratorTests.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\decorator\FactoryVsManualTest.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\DiscountPolicyTests.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\domain\MoneyTests.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\domain\ObserverPatternTest.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\domain\OrderTotalsTests.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\domain\PaymentStrategyTest.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\PricingServiceTests.java
+D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\TaxPolicyTests.java
 D:\CS4928 JAVA project\CafePOS_Week4\src\test\java\com\cafepos\Week6CharacterizationTests.java
