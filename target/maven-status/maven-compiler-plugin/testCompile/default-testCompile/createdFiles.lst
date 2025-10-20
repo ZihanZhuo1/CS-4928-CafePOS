@@ -1,3 +1,7 @@
-com/cafepos/decorator/FactoryVsManualTest.class
-com/cafepos/decorator/DecoratorTests.class
-com/cafepos/domain/ObserverPatternTest.class
+com\cafepos\Week6CharacterizationTests.class
+com\cafepos\decorator\FactoryVsManualTest.class
+com\cafepos\domain\OrderTotalsTests.class
+com\cafepos\decorator\DecoratorTests.class
+com\cafepos\domain\ObserverPatternTest.class
+com\cafepos\domain\MoneyTests.class
+com\cafepos\domain\PaymentStrategyTest.class

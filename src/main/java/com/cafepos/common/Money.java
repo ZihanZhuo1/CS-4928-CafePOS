@@ -8,7 +8,8 @@ public final class Money implements Comparable<Money> {
     private final BigDecimal amount;
 
     private Money(BigDecimal a) {
-        if (a == null) throw new IllegalArgumentException("amount required");
+        if (a == null)
+            throw new IllegalArgumentException("amount required");
         this.amount = a.setScale(2, RoundingMode.HALF_UP);
         if (this.amount.compareTo(BigDecimal.ZERO) < 0) {
             throw new IllegalArgumentException("amount must be >= 0");
@@ -17,6 +18,10 @@ public final class Money implements Comparable<Money> {
 
     public static Money of(double value) {
         return new Money(BigDecimal.valueOf(value));
+    }
+
+    public static Money of(BigDecimal value) {
+        return new Money(value);
     }
 
     public static Money zero() {
@@ -35,6 +40,10 @@ public final class Money implements Comparable<Money> {
         return new Money(this.amount.multiply(BigDecimal.valueOf(factor)));
     }
 
+    public BigDecimal asBigDecimal() {
+        return this.amount;
+    }
+
     @Override
     public int compareTo(Money o) {
         return this.amount.compareTo(o.amount);
@@ -42,8 +51,10 @@ public final class Money implements Comparable<Money> {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Money)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Money))
+            return false;
         Money money = (Money) o;
         return amount.equals(money.amount);
     }
@@ -58,4 +69,3 @@ public final class Money implements Comparable<Money> {
         return amount.toString();
     }
 }
-
