@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.cafepos.decorator.DecoratorTests
--------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.095 s - in com.cafepos.decorator.DecoratorTests
