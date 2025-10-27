@@ -69,7 +69,7 @@ public final class Week5Demo {
                     break;
 
                 default:
-                    System.out.println("\n❌ ERROR: Invalid input!");
+                    System.out.println("\n ERROR: Invalid input!");
                     System.out.println("   Please type only ONE letter: a, v, p, or q");
             }
         }
@@ -96,7 +96,7 @@ public final class Week5Demo {
             int quantity = Integer.parseInt(scanner.nextLine().trim());
 
             if (quantity <= 0) {
-                System.out.println("❌ ERROR: Quantity must be greater than 0!");
+                System.out.println(" ERROR: Quantity must be greater than 0!");
                 return;
             }
 
@@ -111,9 +111,9 @@ public final class Week5Demo {
             }
 
         } catch (NumberFormatException e) {
-            System.out.println("❌ ERROR: Please enter a valid number for quantity!");
+            System.out.println(" ERROR: Please enter a valid number for quantity!");
         } catch (IllegalArgumentException e) {
-            System.out.println("❌ ERROR: " + e.getMessage());
+            System.out.println(" ERROR: " + e.getMessage());
             System.out.println("   Please check your recipe format and try again.");
         }
     }
@@ -146,7 +146,7 @@ public final class Week5Demo {
         System.out.println("========================================");
 
         if (order.items().isEmpty()) {
-            System.out.println("❌ ERROR: Cannot pay for an empty order!");
+            System.out.println(" ERROR: Cannot pay for an empty order!");
             System.out.println("   Please add items first.");
             return;
         }
@@ -181,11 +181,11 @@ public final class Week5Demo {
                     break;
 
                 default:
-                    System.out.println("❌ ERROR: Invalid payment method!");
+                    System.out.println(" ERROR: Invalid payment method!");
                     System.out.println("   Please enter 1, 2, or 3");
             }
         } catch (Exception e) {
-            System.out.println("❌ Payment failed: " + e.getMessage());
+            System.out.println(" Payment failed: " + e.getMessage());
         }
     }
 
@@ -198,8 +198,8 @@ public final class Week5Demo {
         for (LineItem li : order.items()) {
             System.out.println(li.product().name());
             System.out.println("  x" + li.quantity() + " @ $" +
-                (li.product() instanceof Priced p ? p.price() : li.product().basePrice()) +
-                " = $" + li.lineTotal());
+                    (li.product() instanceof Priced p ? p.price() : li.product().basePrice()) +
+                    " = $" + li.lineTotal());
         }
         System.out.println("----------------------------------------");
         System.out.println("Subtotal:  $" + order.subtotal());

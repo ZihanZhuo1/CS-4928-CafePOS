@@ -81,7 +81,7 @@ public final class Week4Demo {
                     break;
 
                 default:
-                    System.out.println("\n❌ ERROR: Invalid input!");
+                    System.out.println("\n ERROR: Invalid input!");
                     System.out.println("   Please type only ONE letter: a, p, r, or q");
             }
         }
@@ -103,7 +103,7 @@ public final class Week4Demo {
             int quantity = Integer.parseInt(scanner.nextLine().trim());
 
             if (quantity <= 0) {
-                System.out.println("❌ ERROR: Quantity must be greater than 0!");
+                System.out.println(" ERROR: Quantity must be greater than 0!");
                 return;
             }
 
@@ -112,11 +112,11 @@ public final class Week4Demo {
                 order.addItem(new LineItem(product.get(), quantity));
                 System.out.println("✓ Success: " + quantity + "x " + product.get().name() + " added!");
             } else {
-                System.out.println("❌ ERROR: Product code '" + productId + "' not found!");
+                System.out.println(" ERROR: Product code '" + productId + "' not found!");
                 System.out.println("   Valid codes: P-ESP, P-LAT, P-CAP, P-MOC");
             }
         } catch (NumberFormatException e) {
-            System.out.println("❌ ERROR: Please enter a valid number for quantity!");
+            System.out.println(" ERROR: Please enter a valid number for quantity!");
         }
     }
 
@@ -150,11 +150,11 @@ public final class Week4Demo {
                     break;
 
                 default:
-                    System.out.println("❌ ERROR: Invalid payment method!");
+                    System.out.println(" ERROR: Invalid payment method!");
                     System.out.println("   Please enter 1, 2, or 3");
             }
         } catch (Exception e) {
-            System.out.println("❌ Payment failed: " + e.getMessage());
+            System.out.println(" Payment failed: " + e.getMessage());
         }
     }
 }
