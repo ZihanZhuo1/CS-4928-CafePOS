@@ -2,6 +2,12 @@ D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\catalog\Catalog.j
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\catalog\InMemoryCatalog.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\checkout\CheckoutService.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\checkout\ReceiptPrinter.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\command\AddItemCommand.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\command\Command.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\command\MacroCommand.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\command\OrderService.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\command\PayOrderCommand.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\command\PosRemote.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\common\Money.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\decorator\ExtraShot.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\decorator\OatMilk.java
@@ -13,6 +19,8 @@ D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\demo\Week3Demo.ja
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\demo\Week4Demo.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\demo\Week5Demo.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\demo\Week6Demo.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\demo\Week8DemoAdapter.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\demo\Week8DemoCommands.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\domain\LineItem.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\domain\Order.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\domain\OrderIds.java
@@ -36,4 +44,7 @@ D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\pricing\LoyaltyPe
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\pricing\NoDiscount.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\pricing\PricingService.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\pricing\TaxPolicy.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\printing\LegacyPrinterAdapter.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\printing\Printer.java
 D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\com\cafepos\smells\OrderManagerGod.java
+D:\CS4928 JAVA project\CafePOS_Week6\src\main\java\vendor\legacy\LegacyThermalPrinter.java

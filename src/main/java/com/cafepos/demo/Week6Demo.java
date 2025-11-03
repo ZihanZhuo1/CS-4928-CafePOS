@@ -43,9 +43,9 @@ public final class Week6Demo {
 
                 // New implementation (clean code)
                 System.out.println("\n New implementation (Clean Code)");
-                System.out.println("   - Strategy Pattern for discounts & tax");
-                System.out.println("   - Dependency Injection");
-                System.out.println("   - SOLID Principles\n");
+                System.out.println("   Strategy Pattern for discounts & tax");
+                System.out.println("   Dependency Injection");
+                System.out.println("   SOLID Principles\n");
 
                 // Choose discount policy based on code
                 DiscountPolicy discountPolicy = switch (discountCode.toUpperCase()) {
@@ -66,14 +66,14 @@ public final class Week6Demo {
                 System.out.println("Old receipt:");
                 System.out.println(oldReceipt);
 
-                System.out.println("\nNew receipt:");
+                System.out.println("\n New receipt:");
                 System.out.println(newReceipt);
 
                 System.out.println("\n" + "━".repeat(60));
                 boolean match = oldReceipt.equals(newReceipt);
                 System.out.println(match
-                                ? "\n RESULT: Match = true (Refactoring Successful!)"
-                                : "\n RESULT: Match = false (Behavior Changed!)");
+                                ? "\n RESULT: Match = true (Refactoring successful!)"
+                                : "\n RESULT: Match = false (Behavior changed!)");
                 System.out.println("━".repeat(60) + "\n");
 
                 scanner.close();

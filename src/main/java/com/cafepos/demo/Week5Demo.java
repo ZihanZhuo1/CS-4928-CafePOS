@@ -164,24 +164,24 @@ public final class Week5Demo {
             switch (paymentChoice) {
                 case "1":
                     order.pay(new CashPayment());
-                    System.out.println("\n✓ Cash payment completed successfully!");
+                    System.out.println("\n Cash payment completed successfully!");
                     printReceipt(order);
                     break;
 
                 case "2":
                     order.pay(new CardPayment());
-                    System.out.println("\n✓ Card payment completed successfully!");
+                    System.out.println("\n Card payment completed successfully!");
                     printReceipt(order);
                     break;
 
                 case "3":
                     order.pay(new WalletPayment());
-                    System.out.println("\n✓ Wallet payment completed successfully!");
+                    System.out.println("\n Wallet payment completed successfully!");
                     printReceipt(order);
                     break;
 
                 default:
-                    System.out.println(" ERROR: Invalid payment method!");
+                    System.out.println(" Error: Invalid payment method!");
                     System.out.println("   Please enter 1, 2, or 3");
             }
         } catch (Exception e) {
