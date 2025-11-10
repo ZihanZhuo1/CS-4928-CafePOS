@@ -1,4 +1,5 @@
 com/cafepos/decorator/FactoryVsManualTest.class
+com/cafepos/state/StatePatternTests.class
 com/cafepos/command/CommandPatternTests.class
 com/cafepos/PricingServiceTests.class
 com/cafepos/printing/AdapterPatternTests$TestLegacyPrinter.class
@@ -10,5 +11,6 @@ com/cafepos/Week6CharacterizationTests.class
 com/cafepos/TaxPolicyTests.class
 com/cafepos/domain/MoneyTests.class
 com/cafepos/domain/OrderTotalsTests.class
+com/cafepos/menu/CompositeIteratorTests.class
 com/cafepos/domain/PaymentStrategyTest.class
 com/cafepos/domain/ObserverPatternTest.class

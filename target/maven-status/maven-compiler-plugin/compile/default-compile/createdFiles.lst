@@ -1,4 +1,5 @@
 com/cafepos/decorator/SizeLarge.class
+com/cafepos/state/DeliveredState.class
 com/cafepos/command/AddItemCommand.class
 com/cafepos/domain/Priced.class
 com/cafepos/printing/Printer.class
@@ -7,6 +8,7 @@ com/cafepos/payment/CashPayment.class
 com/cafepos/pricing/FixedCouponDiscount.class
 com/cafepos/decorator/OatMilk.class
 com/cafepos/checkout/ReceiptPrinter.class
+com/cafepos/state/PreparingState.class
 com/cafepos/domain/SimpleProduct.class
 com/cafepos/catalog/InMemoryCatalog.class
 com/cafepos/observer/OrderObserver.class
@@ -20,9 +22,12 @@ vendor/legacy/LegacyThermalPrinter.class
 com/cafepos/printing/LegacyPrinterAdapter.class
 com/cafepos/command/Command.class
 com/cafepos/command/MacroCommand.class
+com/cafepos/state/CancelledState.class
 com/cafepos/pricing/PricingService$PricingResult.class
+com/cafepos/state/NewState.class
 com/cafepos/payment/CardPayment.class
 com/cafepos/observer/KitchenDisplay.class
+com/cafepos/state/OrderFSM.class
 com/cafepos/pricing/LoyaltyPercentDiscount.class
 com/cafepos/observer/CustomerNotifier.class
 com/cafepos/demo/Week5Demo.class
@@ -30,6 +35,7 @@ com/cafepos/demo/Week8Demo_Commands.class
 com/cafepos/smells/OrderManagerGod.class
 com/cafepos/demo/Week2Demo.class
 com/cafepos/payment/WalletPayment.class
+com/cafepos/menu/MenuItem.class
 com/cafepos/demo/Week8Demo_Adapter.class
 com/cafepos/pricing/FixedRateTaxPolicy.class
 com/cafepos/domain/LineItem.class
@@ -38,9 +44,14 @@ com/cafepos/decorator/ProductDecorator.class
 com/cafepos/domain/Order.class
 com/cafepos/pricing/NoDiscount.class
 com/cafepos/demo/Week6Demo.class
+com/cafepos/state/ReadyState.class
+com/cafepos/menu/Menu.class
+com/cafepos/demo/Week9Demo_Menu.class
 com/cafepos/catalog/Catalog.class
 com/cafepos/command/PayOrderCommand.class
 com/cafepos/common/Money.class
+com/cafepos/demo/Week9Demo_State.class
+com/cafepos/state/State.class
 com/cafepos/pricing/PricingService.class
 com/cafepos/decorator/ExtraShot.class
 com/cafepos/observer/OrderPublisher.class
@@ -48,4 +59,6 @@ com/cafepos/decorator/Syrup.class
 com/cafepos/pricing/DiscountPolicy.class
 com/cafepos/observer/DeliveryDesk.class
 com/cafepos/command/OrderService.class
+com/cafepos/menu/MenuComponent.class
 com/cafepos/demo/Week3Demo.class
+com/cafepos/menu/CompositeIterator.class

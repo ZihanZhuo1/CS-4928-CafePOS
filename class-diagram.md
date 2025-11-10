@@ -311,6 +311,123 @@ namespace vendor.legacy {
     }
 }
 
+namespace com.cafepos.menu {
+    class MenuComponent {
+        <<abstract>>
+        + add(c: MenuComponent) : void
+        + remove(c: MenuComponent) : void
+        + getChild(i: int) : MenuComponent
+        + name() : String
+        + price() : Money
+        + vegetarian() : boolean
+        + iterator() : Iterator~MenuComponent~
+        + print() : void
+    }
+
+    class MenuItem {
+        - String name
+        - Money price
+        - boolean vegetarian
+        + MenuItem(name: String, price: Money, vegetarian: boolean)
+        + name() : String
+        + price() : Money
+        + vegetarian() : boolean
+        + iterator() : Iterator~MenuComponent~
+        + print() : void
+    }
+
+    class Menu {
+        - String name
+        - List~MenuComponent~ children
+        + Menu(name: String)
+        + add(c: MenuComponent) : void
+        + remove(c: MenuComponent) : void
+        + getChild(i: int) : MenuComponent
+        + name() : String
+        + childrenIterator() : Iterator~MenuComponent~
+        + iterator() : Iterator~MenuComponent~
+        + print() : void
+        + allItems() : List~MenuComponent~
+        + vegetarianItems() : List~MenuItem~
+    }
+
+    class CompositeIterator {
+        - Deque~Iterator~MenuComponent~~ stack
+        + CompositeIterator(root: Iterator~MenuComponent~)
+        + hasNext() : boolean
+        + next() : MenuComponent
+    }
+}
+
+namespace com.cafepos.state {
+    class State {
+        <<interface>>
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class OrderFSM {
+        - State state
+        + OrderFSM()
+        + set(s: State) : void
+        + status() : String
+        + pay() : void
+        + prepare() : void
+        + markReady() : void
+        + deliver() : void
+        + cancel() : void
+    }
+
+    class NewState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class PreparingState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class ReadyState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class DeliveredState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class CancelledState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+}
+
 namespace com.cafepos.demo {
     class Week2Demo {
         + main(args: String[]) : void$
@@ -340,6 +457,12 @@ namespace com.cafepos.demo {
         - viewOrder(order: Order) : void$
     }
     class Week8Demo_Adapter {
+        + main(args: String[]) : void$
+    }
+    class Week9Demo_Menu {
+        + main(args: String[]) : void$
+    }
+    class Week9Demo_State {
         + main(args: String[]) : void$
     }
 }
@@ -457,4 +580,35 @@ Week8Demo_Commands ..> Order : uses
 Week8Demo_Adapter ..> Printer : uses
 Week8Demo_Adapter ..> LegacyPrinterAdapter : creates
 Week8Demo_Adapter ..> LegacyThermalPrinter : creates
+
+%% Week 9 Composite Pattern Relationships
+MenuComponent <|-- MenuItem : extends
+MenuComponent <|-- Menu : extends
+Menu --> "*" MenuComponent : contains
+
+%% Week 9 Iterator Pattern Relationships
+Menu --> CompositeIterator : creates
+CompositeIterator --> Iterator : uses
+
+%% Week 9 State Pattern Relationships
+State <|.. NewState : implements
+State <|.. PreparingState : implements
+State <|.. ReadyState : implements
+State <|.. DeliveredState : implements
+State <|.. CancelledState : implements
+
+OrderFSM --> State : delegates to
+NewState --> PreparingState : transitions to
+NewState --> CancelledState : transitions to
+PreparingState --> ReadyState : transitions to
+PreparingState --> CancelledState : transitions to
+ReadyState --> DeliveredState : transitions to
+
+%% Week 9 Demo dependencies
+Week9Demo_Menu ..> Menu : uses
+Week9Demo_Menu ..> MenuItem : creates
+Week9Demo_Menu ..> CompositeIterator : uses
+
+Week9Demo_State ..> OrderFSM : uses
+Week9Demo_State ..> State : uses
 ```
