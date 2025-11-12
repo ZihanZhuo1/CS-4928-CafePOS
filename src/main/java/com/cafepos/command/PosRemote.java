@@ -7,13 +7,9 @@ public final class PosRemote {
     private final Command[] slots;
     private final Deque<Command> history = new ArrayDeque<>();
 
-    public PosRemote(int n) {
-        this.slots = new Command[n];
-    }
+    public PosRemote(int n) { this.slots = new Command[n]; }
 
-    public void setSlot(int i, Command c) {
-        slots[i] = c;
-    }
+    public void setSlot(int i, Command c) { slots[i] = c; }
 
     public void press(int i) {
         Command c = slots[i];
@@ -26,10 +22,7 @@ public final class PosRemote {
     }
 
     public void undo() {
-        if (history.isEmpty()) {
-            System.out.println("[Remote] Nothing to undo");
-            return;
-        }
+        if (history.isEmpty()) { System.out.println("[Remote] Nothing to undo"); return; }
         history.pop().undo();
     }
 }

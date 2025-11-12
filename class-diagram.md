@@ -240,6 +240,194 @@ namespace com.cafepos.smells {
     }
 }
 
+namespace com.cafepos.command {
+    class Command {
+        <<interface>>
+        + execute() : void
+        + undo() : void
+    }
+
+    class OrderService {
+        - ProductFactory factory
+        - Order order
+        + OrderService(order: Order)
+        + addItem(recipe: String, qty: int) : void
+        + removeLastItem() : void
+        + totalWithTax(percent: int) : Money
+        + pay(strategy: PaymentStrategy, taxPercent: int) : void
+        + order() : Order
+    }
+
+    class AddItemCommand {
+        - OrderService service
+        - String recipe
+        - int qty
+        + AddItemCommand(service: OrderService, recipe: String, qty: int)
+        + execute() : void
+        + undo() : void
+    }
+
+    class PayOrderCommand {
+        - OrderService service
+        - PaymentStrategy strategy
+        - int taxPercent
+        + PayOrderCommand(service: OrderService, strategy: PaymentStrategy, taxPercent: int)
+        + execute() : void
+    }
+
+    class PosRemote {
+        - Command[] slots
+        - Deque~Command~ history
+        + PosRemote(n: int)
+        + setSlot(i: int, c: Command) : void
+        + press(i: int) : void
+        + undo() : void
+    }
+
+    class MacroCommand {
+        - Command[] steps
+        + MacroCommand(steps: Command...)
+        + execute() : void
+        + undo() : void
+    }
+}
+
+namespace com.cafepos.printing {
+    class Printer {
+        <<interface>>
+        + print(receiptText: String) : void
+    }
+
+    class LegacyPrinterAdapter {
+        - LegacyThermalPrinter adaptee
+        + LegacyPrinterAdapter(adaptee: LegacyThermalPrinter)
+        + print(receiptText: String) : void
+    }
+}
+
+namespace vendor.legacy {
+    class LegacyThermalPrinter {
+        + legacyPrint(payload: byte[]) : void
+    }
+}
+
+namespace com.cafepos.menu {
+    class MenuComponent {
+        <<abstract>>
+        + add(c: MenuComponent) : void
+        + remove(c: MenuComponent) : void
+        + getChild(i: int) : MenuComponent
+        + name() : String
+        + price() : Money
+        + vegetarian() : boolean
+        + iterator() : Iterator~MenuComponent~
+        + print() : void
+    }
+
+    class MenuItem {
+        - String name
+        - Money price
+        - boolean vegetarian
+        + MenuItem(name: String, price: Money, vegetarian: boolean)
+        + name() : String
+        + price() : Money
+        + vegetarian() : boolean
+        + iterator() : Iterator~MenuComponent~
+        + print() : void
+    }
+
+    class Menu {
+        - String name
+        - List~MenuComponent~ children
+        + Menu(name: String)
+        + add(c: MenuComponent) : void
+        + remove(c: MenuComponent) : void
+        + getChild(i: int) : MenuComponent
+        + name() : String
+        + childrenIterator() : Iterator~MenuComponent~
+        + iterator() : Iterator~MenuComponent~
+        + print() : void
+        + allItems() : List~MenuComponent~
+        + vegetarianItems() : List~MenuItem~
+    }
+
+    class CompositeIterator {
+        - Deque~Iterator~MenuComponent~~ stack
+        + CompositeIterator(root: Iterator~MenuComponent~)
+        + hasNext() : boolean
+        + next() : MenuComponent
+    }
+}
+
+namespace com.cafepos.state {
+    class State {
+        <<interface>>
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class OrderFSM {
+        - State state
+        + OrderFSM()
+        + set(s: State) : void
+        + status() : String
+        + pay() : void
+        + prepare() : void
+        + markReady() : void
+        + deliver() : void
+        + cancel() : void
+    }
+
+    class NewState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class PreparingState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class ReadyState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class DeliveredState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+
+    class CancelledState {
+        + pay(ctx: OrderFSM) : void
+        + prepare(ctx: OrderFSM) : void
+        + markReady(ctx: OrderFSM) : void
+        + deliver(ctx: OrderFSM) : void
+        + cancel(ctx: OrderFSM) : void
+        + name() : String
+    }
+}
+
 namespace com.cafepos.demo {
     class Week2Demo {
         + main(args: String[]) : void$
@@ -260,6 +448,21 @@ namespace com.cafepos.demo {
         - printReceipt(order) : void$
     }
     class Week6Demo {
+        + main(args: String[]) : void$
+    }
+    class Week8Demo_Commands {
+        + main(args: String[]) : void$
+        - pressButton(remote: PosRemote, slot: int) : void$
+        - undoLastCommand(remote: PosRemote) : void$
+        - viewOrder(order: Order) : void$
+    }
+    class Week8Demo_Adapter {
+        + main(args: String[]) : void$
+    }
+    class Week9Demo_Menu {
+        + main(args: String[]) : void$
+    }
+    class Week9Demo_State {
         + main(args: String[]) : void$
     }
 }
@@ -343,4 +546,69 @@ Week6Demo ..> PricingService : uses
 Week6Demo ..> DiscountPolicy : uses
 Week6Demo ..> TaxPolicy : uses
 Week6Demo ..> ReceiptPrinter : uses
+
+%% Week 8 Command Pattern Relationships
+Command <|.. AddItemCommand : implements
+Command <|.. PayOrderCommand : implements
+Command <|.. MacroCommand : implements
+
+OrderService --> Order : manages
+OrderService --> ProductFactory : uses
+OrderService --> PaymentStrategy : delegates to
+
+AddItemCommand --> OrderService : calls
+PayOrderCommand --> OrderService : calls
+PayOrderCommand --> PaymentStrategy : holds
+
+MacroCommand o-- "*" Command : contains
+
+PosRemote --> "*" Command : stores in slots
+PosRemote --> "*" Command : tracks in history
+
+%% Week 8 Adapter Pattern Relationships
+Printer <|.. LegacyPrinterAdapter : implements
+LegacyPrinterAdapter --> LegacyThermalPrinter : adapts
+
+%% Week 8 Demo dependencies
+Week8Demo_Commands ..> PosRemote : uses
+Week8Demo_Commands ..> OrderService : uses
+Week8Demo_Commands ..> AddItemCommand : creates
+Week8Demo_Commands ..> PayOrderCommand : creates
+Week8Demo_Commands ..> MacroCommand : creates
+Week8Demo_Commands ..> Order : uses
+
+Week8Demo_Adapter ..> Printer : uses
+Week8Demo_Adapter ..> LegacyPrinterAdapter : creates
+Week8Demo_Adapter ..> LegacyThermalPrinter : creates
+
+%% Week 9 Composite Pattern Relationships
+MenuComponent <|-- MenuItem : extends
+MenuComponent <|-- Menu : extends
+Menu --> "*" MenuComponent : contains
+
+%% Week 9 Iterator Pattern Relationships
+Menu --> CompositeIterator : creates
+CompositeIterator --> Iterator : uses
+
+%% Week 9 State Pattern Relationships
+State <|.. NewState : implements
+State <|.. PreparingState : implements
+State <|.. ReadyState : implements
+State <|.. DeliveredState : implements
+State <|.. CancelledState : implements
+
+OrderFSM --> State : delegates to
+NewState --> PreparingState : transitions to
+NewState --> CancelledState : transitions to
+PreparingState --> ReadyState : transitions to
+PreparingState --> CancelledState : transitions to
+ReadyState --> DeliveredState : transitions to
+
+%% Week 9 Demo dependencies
+Week9Demo_Menu ..> Menu : uses
+Week9Demo_Menu ..> MenuItem : creates
+Week9Demo_Menu ..> CompositeIterator : uses
+
+Week9Demo_State ..> OrderFSM : uses
+Week9Demo_State ..> State : uses
 ```
