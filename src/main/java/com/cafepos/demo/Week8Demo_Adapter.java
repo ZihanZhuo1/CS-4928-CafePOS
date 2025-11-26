@@ -30,20 +30,20 @@ public final class Week8Demo_Adapter {
                 break;
             } else if (input.equals("1")) {
                 String receipt = "Order #1001\n" +
-                               "Latte (Large) x2\n" +
-                               "Subtotal: 7.80\n" +
-                               "Tax (10%): 0.78\n" +
-                               "Total: 8.58";
+                        "Latte (Large) x2\n" +
+                        "Subtotal: 7.80\n" +
+                        "Tax (10%): 0.78\n" +
+                        "Total: 8.58";
                 System.out.println("\n--- Printing Receipt ---");
                 printer.print(receipt);
                 System.out.println("[Demo] Receipt sent via adapter successfully!");
             } else if (input.equals("2")) {
                 String receipt = "Order #1002\n" +
-                               "Espresso x1\n" +
-                               "Cappuccino x2\n" +
-                               "Subtotal: 8.50\n" +
-                               "Tax (10%): 0.85\n" +
-                               "Total: 9.35";
+                        "Espresso x1\n" +
+                        "Cappuccino x2\n" +
+                        "Subtotal: 8.50\n" +
+                        "Tax (10%): 0.85\n" +
+                        "Total: 9.35";
                 System.out.println("\n--- Printing Receipt ---");
                 printer.print(receipt);
                 System.out.println("[Demo] Receipt sent via adapter successfully!");
