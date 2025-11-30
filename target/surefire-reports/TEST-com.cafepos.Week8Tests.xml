@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.cafepos.Week6CharacterizationTests" time="0.006" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.cafepos.Week8Tests" time="0.004" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,16 +58,21 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="loyalty_discount_card_payment" classname="com.cafepos.Week6CharacterizationTests" time="0.002">
-    <system-out><![CDATA[[Card] Customer paid 8.15 EUR with card ****1234
+  <testcase name="testCommandUndo" classname="com.cafepos.Week8Tests" time="0">
+    <system-out><![CDATA[[Service] Added Espresso x1
+[Service] Removed last item
 ]]></system-out>
   </testcase>
-  <testcase name="no_discount_cash_payment" classname="com.cafepos.Week6CharacterizationTests" time="0.001">
-    <system-out><![CDATA[[Cash] Customer paid 4.18 EUR
+  <testcase name="testAdapter" classname="com.cafepos.Week8Tests" time="0.001"/>
+  <testcase name="testMacroCommand" classname="com.cafepos.Week8Tests" time="0.001">
+    <system-out><![CDATA[[Service] Added Espresso x1
+[Service] Added Latte x1
+[Service] Removed last item
+[Service] Removed last item
 ]]></system-out>
   </testcase>
-  <testcase name="coupon_fixed_amount_and_qty_clamp" classname="com.cafepos.Week6CharacterizationTests" time="0.001">
-    <system-out><![CDATA[[Wallet] Customer paid 2.53 EUR via wallet user-wallet-789
+  <testcase name="testRemotePress" classname="com.cafepos.Week8Tests" time="0.001">
+    <system-out><![CDATA[[Service] Added Latte x1
 ]]></system-out>
   </testcase>
 </testsuite>
